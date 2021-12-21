@@ -27,3 +27,13 @@ console.log(`
 - Choose a font from https://fonts.google.com/
 - Use the font for your card
 `);
+document.querySelector("#root") += `
+    <card>
+        <header>
+            <h3>${randomItem (firstName)} ${randomItem(lastName)} </h3>
+            </header>
+        <img src="", alt="random_person"</img>
+        <content> 
+        <h4> My Hobbies </h4>
+
+        `;

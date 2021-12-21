@@ -20,3 +20,6 @@ console.log(`
 3. Add classes to all elements of your card
 - Add styling to the CSS file
 `);
+
+document.querySelector("#root").innerHTML += `
+<div class="Grid">

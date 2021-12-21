@@ -1,3 +1,5 @@
+const { visitFunctionBody } = require("typescript");
+
 console.log(`
 ┏━━━━━━━━━━━━━━┓
 ┃  EXERCISE 1  ┃
@@ -17,15 +19,33 @@ console.log(`
 - Only use JavaScript.
 - The '<style/>' element should have the id "main-style"
 
+
+
 4. Add css to the '<style id="main-style"/>' element
 - add the following css
 - the headline should be blue
 `);
 
 // 1.
+const root = document.querySelector("#root");
 
+const h1 = document.createElement("h1");
+
+root.append(h1);
+
+h1.innerHTML("It works!");
 // 2.
-
+h1.classList = "main-headline";
 // 3.
+const style = document.createElement("style");
+
+document.head.append(style);
+
+style.id = "main-style";
 
 // 4.
+style.innerHTML(`
+#main-style {
+    color: blue;
+} 
+`);

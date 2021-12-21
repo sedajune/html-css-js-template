@@ -18,3 +18,16 @@ console.log(`
 4. On reload show a text "You are subscribed" if the localStorage key exists
 - The form should not be visible
 `);
+const root = document.querySelector("#root");
+
+const form = document.createElement("form");
+
+root.append(form);
+
+form.innerHTML = `
+<label>
+    E-Mail
+        <input type="email"/>
+</label>
+<button type="submit">Subscribe</button>
+`;
