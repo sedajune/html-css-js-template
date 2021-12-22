@@ -1,5 +1,3 @@
-const { visitFunctionBody } = require("typescript");
-
 console.log(`
 ┏━━━━━━━━━━━━━━┓
 ┃  EXERCISE 1  ┃
@@ -33,9 +31,9 @@ const h1 = document.createElement("h1");
 
 root.append(h1);
 
-h1.innerHTML("It works!");
+h1.innerHTML = "It works!";
 // 2.
-h1.classList = "main-headline";
+h1.classList.add("main-headline");
 // 3.
 const style = document.createElement("style");
 
@@ -44,8 +42,8 @@ document.head.append(style);
 style.id = "main-style";
 
 // 4.
-style.innerHTML(`
-#main-style {
+style.innerHTML = `
+.main-headline {
     color: blue;
 } 
-`);
+`;

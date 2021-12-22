@@ -27,13 +27,61 @@ console.log(`
 - Choose a font from https://fonts.google.com/
 - Use the font for your card
 `);
-document.querySelector("#root") += `
-    <card>
-        <header>
-            <h3>${randomItem (firstName)} ${randomItem(lastName)} </h3>
-            </header>
-        <img src="", alt="random_person"</img>
-        <content> 
-        <h4> My Hobbies </h4>
 
+function randomN(n) {
+  return Math.round(Math.random() * n);
+}
+
+const firstNames = ["Berry", "Sam", "Laura", "Bruno", "Cat"];
+const lastNames = ["Schuster", "Smith", "Green", "Lang", "Becker"];
+
+function randomItem(array) {
+  const randomIndex = array.length - 1;
+  return array[randomN(randomIndex)];
+}
+const firstName = randomItem(firstNames);
+const secondName = randomItem(lastNames);
+
+const genderMapping = {
+  men: 99,
+  women: 99,
+  lego: 9,
+};
+
+const genders = Object.keys(genderMapping);
+console.log(
+  genders,
+  Object.values(genderMapping),
+  Object.entries(genderMapping)
+);
+
+const gender = randomItem(genders);
+const maxIndex = genderMapping[gender];
+const randomImageIndex = randomN(maxIndex);
+
+console.log(gender, firstName, secondName, maxIndex, randomImageIndex);
+
+document.querySelector("#root").innerHTML += `
+    <div class="card">
+        <header class="card-header">
+            <h3 class="card-names">${randomItem(firstNames)} ${randomItem(
+  lastNames
+)} </h3>
+           <figure class="card-pic"> 
+        <img src="https://randomuser.me/api/portraits/${gender}/${randomImageIndex}.jpg", alt="Avatar of ${randomItem(
+  firstNames
+)} ${randomItem(lastNames)}">
+    </img>
+        </figure>
+        </header>
+        <div class="card-content"> 
+            <h4 class="Hobbies-header">My Hobbies</h4>
+                <ul class="List-hobbies">
+                <li class="First-hobby">Ice Skating</li>
+                <li class="Second-hobby">Singing</li>
+                <li class="Third-hobby">Running</li>
+                <li class="Fourth-hobby">Cooking</li>
+                </ul>
+            </div>
+        </div>
         `;

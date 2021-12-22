@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: cornflowerblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 60rem;
+  margin: auto;
+  padding: 1rem;
+}

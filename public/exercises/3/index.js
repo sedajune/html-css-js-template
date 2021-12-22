@@ -21,5 +21,45 @@ console.log(`
 - Add styling to the CSS file
 `);
 
-document.querySelector("#root").innerHTML += `
-<div class="Grid">
+function randomN(n) {
+  return Math.round(Math.random() * n);
+}
+
+function randomItem(array) {
+  const randomIndex = array.length - 1;
+  return array[randomN(randomIndex)];
+}
+
+const firstNames = ["Harry", "Sam", "Emily", "Ken", "Dave"];
+
+const lastNames = ["Fox", "Duck", "Goose", "Beatle", "Catfish"];
+
+const sex = ["women", "men"];
+
+const people = Array.from({ length: 4 }).map(() => ({
+  firstName: randomItem(firstNames),
+  lastName: randomItem(lastNames),
+  photo: `https://randomuser.me/api/portraits/${randomItem(sex)}/${randomN(
+    50
+  )}.jpg`,
+}));
+
+document.querySelector("#root").innerHTML = `
+
+    <div class="Grid">${people
+      .map(
+        person => `
+        <div class="card">
+            <header class="card-header">
+                <h3> ${person.firstName} ${person.lastName}</h3>
+            </header>
+            <figure class="card-pic">
+                <img src="${person.photo}" alt="Avatar of ${randomItem(
+          firstNames
+        )}"/>
+            </figure>
+        </div>
+        `
+      )
+
+      .join("")}</div>`;
