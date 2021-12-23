@@ -36,7 +36,7 @@ const lastNames = ["Fox", "Duck", "Goose", "Beatle", "Catfish"];
 
 const sex = ["women", "men"];
 
-const people = Array.from({ length: 4 }).map(() => ({
+const people = Array.from({ length: 8 }).map(() => ({
   firstName: randomItem(firstNames),
   lastName: randomItem(lastNames),
   photo: `https://randomuser.me/api/portraits/${randomItem(sex)}/${randomN(

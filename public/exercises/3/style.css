@@ -12,8 +12,15 @@ body {
 
 .Grid {
   display: grid;
+  grid-template-columns: repeat(var(--column-count, 4), 1fr);
   gap: 1rem;
   max-width: 60rem;
   margin: auto;
   padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .Grid {
+    --column-count: 4;
+  }
 }
