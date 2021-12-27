@@ -13,3 +13,21 @@ console.log(`
 - Add a simple styling for each card
 - Display all cards in a responsive grid 
 `);
+
+const getData = fetch("/api/marvel.json");
+
+getData
+  .then(response => response.json())
+
+  .then(data => console.log(data));
+const names = data.results.map(character => {
+  return `${character.names}`;
+});
+console.log(names);
+
+document.querySelector("#root").innerHTML += /*html*/ `
+    <div class="cards">
+    
+    </div>
+    
+    `;
